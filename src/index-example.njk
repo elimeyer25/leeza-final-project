@@ -1,22 +1,22 @@
 {% extends '_templates/base.njk' %}
 
-{% block page_title %}Austin Spots{% endblock %}
+{% block page_title %}Index page title{% endblock %}
 
 {% block page_description %}The index search description for this page goes here.{% endblock %}
 
 {% block content %}
 <div class="container">
-  <h1>Best Views and Sights in Austin!</h1>
-  <p>Austin, Texas is a hub of art, culture, food, friends! From 1839, when the city was born, to now with it's 960,000 residents and plenty of places and cuisine to explore, these are the top three best landmarks and restraunts in Austin.</p>
-  <h2>Landmarks and Restraunts</h2>
-  <p>Have a look through these pages to find more about these great locations!</p>
+  <h1>Main headline here</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in facilisis velit, aliquam congue dui. Mauris id mi quam. Nam enim leo, bibendum vel efficitur id, elementum malesuada est. Pellentesque interdum tempus eros nec iaculis. Quisque ac est dictum, vehicula nulla quis, condimentum dui.</p>
+  <h2>Library books loop</h2>
+  <p>This loops through data that came from a Google Docs example.</p>
   <div class="row">
-    {% for restraunt in library.books %}
+    {% for book in library.books %}
       <div class="col">
         <img src="img/{{ book.slug }}.jpg" alt="" class="img-fluid">
         <h3><a href="books/{{ book.slug }}.html">{{ book.title }}</a></h3>
       </div>
-    {% endfor %} 
+    {% endfor %}
   </div>
   <h2>Bookstores loop</h2>
   <p>This loops through data that came from a Google Sheet example.</p>

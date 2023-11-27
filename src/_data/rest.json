@@ -1,10 +1,10 @@
 {
-  "books": [
+  "landmarks-restraunts": [
     {
-      "slug": "the-clown",
-      "title": "The Clown",
+      "slug": "restaurants",
+      "title": "Austin restaurants",
       "author": "Heinrich Böll",
-      "blurb": "The Clown (German: Ansichten eines Clowns, lit. “Opinions of a clown”) is a 1963 novel by West German writer Heinrich Böll."
+      "blurb": "Austin restaurants are a important part of Austin's history"
     },
     {
       "slug": "the-shipping-news",
