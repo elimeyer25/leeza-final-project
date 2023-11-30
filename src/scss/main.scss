@@ -20,7 +20,26 @@
 
 // Import partials
 @import 'nav';
+@import "jumbotron";
 
 h3 {
   font-size: 1.5rem;
 }
+
+.centered-heading {
+  text-align: center;
+}
+
+.centered-paragraph {
+  text-align: center;
+}
+
+.utcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+

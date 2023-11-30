@@ -6,25 +6,41 @@
 
 {% block content %}
 <div class="container">
-  <h1>Best Views and Sights in Austin!</h1>
+  <h1 class="centered-heading">Best Views and Sights in Austin!</h1>
   <p>Austin, Texas is a hub of art, culture, food, friends! From 1839, when the city was born, to now with it's 960,000 residents and plenty of places and cuisine to explore, these are the top three best landmarks and restaurants in Austin.</p>
   <h2>Landmarks and Restraunts</h2>
   <p>Have a look through these pages to find more about these great locations!</p>
   <div class="row">
-    {% for restaurants in rest.restaurants %}
-      <div class="col">
-        <img src="img/{{ restaurant.slug }}.jpg" alt="" class="img-fluid">
-        <h3><a href="restaurants/{{ restaurant.slug }}.html">{{ restaurant.title }}</a></h3>
+    {% for landmark in landmarks.landmarks %}
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="img/{{ landmark.slug }}.jpg" class="card-img-top" alt="{{ landmark.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ landmark.name }}</h5>
+            <p class="card-text">{{ landmark.location }}</p>
+            <a href="landmarks/{{ landmark.slug }}.html">More info!</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <h2>Restraunts</h2>
+  <p>Have a look through these pages to find more about these great locations!</p>
+
+<div class="row">
+    {% for restaurant in restaurant.restaurants %}
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="img/{{ restaurant.name }}.jpg" class="card-img-top" alt="{{ restaurant.image }">
+          <div class="card-body">
+            <h5 class="card-title">{{ restaurant.name }}</h5>
+            <p class="card-text">{{ restaurant.category }}</p>
+            <a href="{{ restaurant.slug }}"></a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
       </div>
-    {% endfor %} 
-  </div>
-  <h2>Bookstores loop</h2>
-  <p>This loops through data that came from a Google Sheet example.</p>
-  <hr>
-  {% for store in bookstores.stores %}
-    <h3><a href="{{ store.url }}" target="_blank">{{ store.name }}</a></h3>
-    <p>{{ store.address}}, {{ store.city }}, {{ store.state }} {{ store.zip }}</p>
-    <hr>
-  {% endfor %}
-</div>
+    </div>
 {% endblock %}
