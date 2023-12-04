@@ -5,23 +5,24 @@
 {% block page_description %}Top Landmarks in Austin{% endblock %}
 
 {% block content %}
-<div class="jumbotron">
 <article class="container">
-  <h1 class="centered-heading">Top Landmarks in Austin!</h1>
-  <p class="centered-paragraph">These are the top 4 most visited landmarks in Austin, sure to make every visit beautiful!</p>
-</aricle>
+  <h1 class="centered-heading">Favorite Restraunts in Austin!</h1>
+  <p class="centered-paragraph">These are the top most visited restraunts in Austin, sure to make every visit tasty!</p>
+</article>
 <div class="row">
     {% for restaurant in restaurant.restaurants %}
       <div class="col-sm-6 col-lg-4 mb-4">
         <div class="card">
-          <img src="img/{{ restaurants.slug }}.jpg" class="card-img-top" alt="{{ restaurant.name }}">
+          <img src="img/{{ restaurant.name }}.jpg" class="card-img-top" alt="{{ restaurant.image }}">
           <div class="card-body">
             <h5 class="card-title">{{ restaurant.name }}</h5>
-            <p class="card-text">{{ restaurant.category }}</p>
-            <a href="{{ restaurant.slug }}"></a>
+            <p class="card-text">{{ restaurant.category }}</p> 
+            <p class="card-text" class="centered-headline">{{ restaurant.address }}</p>
             </div>
           </div>
         </div>
       {% endfor %}
-      </div>
+</div>
 {% endblock %}
+
+  

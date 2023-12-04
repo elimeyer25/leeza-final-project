@@ -7,40 +7,31 @@
 {% block content %}
 <div class="container">
   <h1 class="centered-heading">Best Views and Sights in Austin!</h1>
-  <p>Austin, Texas is a hub of art, culture, food, friends! From 1839, when the city was born, to now with it's 960,000 residents and plenty of places and cuisine to explore, these are the top three best landmarks and restaurants in Austin.</p>
+  <p>Welcome to the vibrant heart of Texas: Austin! A hub of art, culture, food, and friends! From 1839, when the city was born, to now, this dynamic city encapsulates the spirit of adventure and cultural diversity. Whether you're drawn to the iconic State Capitol building, yearning for the flavors of Tex-Mex cuisine, or seeking the pulse of live music echoing through its streets, Austin promises an unforgettable journey filled with exploration, indulgence, and the spirit of the Lone Star State.</p>
   <h2>Landmarks and Restraunts</h2>
-  <p>Have a look through these pages to find more about these great locations!</p>
-  <div class="row">
-    {% for landmark in landmarks.landmarks %}
-      <div class="col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <img src="img/{{ landmark.slug }}.jpg" class="card-img-top" alt="{{ landmark.name }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ landmark.name }}</h5>
-            <p class="card-text">{{ landmark.location }}</p>
-            <a href="landmarks/{{ landmark.slug }}.html">More info!</a>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
+  <p>Have a look to find more about these great locations!</p>
 
-    <h2>Restraunts</h2>
-  <p>Have a look through these pages to find more about these great locations!</p>
-
-<div class="row">
-    {% for restaurant in restaurant.restaurants %}
-      <div class="col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <img src="img/{{ restaurant.name }}.jpg" class="card-img-top" alt="{{ restaurant.name }">
-          <div class="card-body">
-            <h5 class="card-title">{{ restaurant.name }}</h5>
-            <p class="card-text">{{ restaurant.category }}</p>
-            <a href="{{ restaurant.slug }}"></a>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="/img/austin-sign.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Best Landmarks in Austin!</h5>
+        <p class="card-text">Dive into the 4 best landmarks in Austin</p>
+        <p><a href="/landmarks.html">Explore Here</a></p>
       </div>
     </div>
-{% endblock %}
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="/img/people-eating.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">List of the Best Restraunts in Austin!</h5>
+        <p class="card-text">Find the hottest cuisine in capital city.</p>
+        <p><a href="/restaurants.html">Explore Here</a></p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
