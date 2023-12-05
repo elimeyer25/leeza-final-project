@@ -1,0 +1,31 @@
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Restraunts{% endblock %}
+
+{% block page_description %}Top Landmarks in Austin{% endblock %}
+
+{% block content %}
+<article class="container">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <h1 class="centered-heading">Favorite Activities in Austin!</h1>
+  <p class="centered-heading">Austin's most popular activities!</p>
+<div class="row">
+    {% for activity in activity.activities %}
+      <div class="col-sm-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ activity.activity }}</h5>
+            <p class="card-text">{{ activity.date_time }}</p> 
+            <p class="card-text">{{ activity.address }}</p>
+            <a href="{{ activity.url }}.html" class="custom-link">More Information</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+</div>
+</article>
+{% endblock %}
+
+  

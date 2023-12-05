@@ -6,32 +6,52 @@
 
 {% block content %}
 <div class="container">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
   <h1 class="centered-heading">Best Views and Sights in Austin!</h1>
   <p>Welcome to the vibrant heart of Texas: Austin! A hub of art, culture, food, and friends! From 1839, when the city was born, to now, this dynamic city encapsulates the spirit of adventure and cultural diversity. Whether you're drawn to the iconic State Capitol building, yearning for the flavors of Tex-Mex cuisine, or seeking the pulse of live music echoing through its streets, Austin promises an unforgettable journey filled with exploration, indulgence, and the spirit of the Lone Star State.</p>
-  <h2>Landmarks and Restraunts</h2>
-  <p>Have a look to find more about these great locations!</p>
 
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <div class="card">
-      <img src="/img/austin-sign.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Best Landmarks in Austin!</h5>
-        <p class="card-text">Dive into the 4 best landmarks in Austin</p>
-        <p><a href="/landmarks.html">Explore Here</a></p>
-      </div>
-    </div>
+  <div class="row">
+      {% for landmark in landmarks.landmarks %}
+        <div class="col-sm-6 mb-4">
+          <div class="card">
+            <img src="img/{{ landmark.slug }}.jpg" class="card-img-top" alt="{{ landmark.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ landmark.name }}</h5>
+              <p class="card-text">{{ landmark.location }}</p>
+              <a href="landmarks/{{ landmark.slug }}.html" class="custom-link">More info!</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
   </div>
-  <div class="col">
-    <div class="card">
-      <img src="/img/people-eating.jpg" class="card-img-top" alt="...">
+
+  <article class="container">
+    <h1 class="centered-heading">More of What Ausitn Has to Offer</h1>
+    <p class="centered-heading">There is so much to explore in Austin!</p>
+  </article>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class="card">
+        <img src="/img/people-eating.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">List of the Best Restraunts in Austin!</h5>
-        <p class="card-text">Find the hottest cuisine in capital city.</p>
-        <p><a href="/restaurants.html">Explore Here</a></p>
+        <p class="card-text">Find the hottest cuisnine in capital city.</p>
+        <p><a href="/restaurants.html" class="custom-link">Explore Here</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="/img/boating.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">List of the Best Activites in Austin!</h5>
+        <p class="card-text">Find the abundance of activites here in Austin.</p>
+        <p><a href="/activities.html" class="custom-link">Explore Here</a></p>
         </div>
         </div>
       </div>
     </div>
   </div>
-  {% endblock %}
+{% endblock %}
